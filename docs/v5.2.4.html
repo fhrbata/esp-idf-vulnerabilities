@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ESP-IDF Vulnerabilities</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<header>
+			<div class="site-header">
+				<h1 class="site-title"><a href=".">ESP-IDF Vulnerabilities</a></h1>
+				<img class="site-logo" src="images/espressif-logo.png" alt="Espressif Logo">
+			</div>
+		</header>
+		<main>
+			
+    <h3>v5.2.4</h3>
+    <table class="release-table">
+    <tr class=odd><td></td><td></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-30949">CVE-2024-30949</a></td></tr>
+<tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
+<tr class=odd><td>Not Applicable:</td><td>May affect RISCV binaries that are linked with libgloss. IDF does not link against this library.</td></tr>
+<tr class=odd><td>Package:</td><td>newlib</td></tr>
+<tr class=odd><td>Package Version:</td><td>4.3.0</td></tr>
+<tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>9.8</td></tr>
+<tr class=odd><td>CVSS Severity:</td><td>CRITICAL</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:newlib_project:newlib:4.3.0:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>An issue in newlib v.4.3.0 allows an attacker to execute arbitrary code via the time unit scaling in the _gettimeofday function.</td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=even><td></td><td></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28115">CVE-2024-28115</a></td></tr>
+<tr class=even><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
+<tr class=even><td>Not Applicable:</td><td>Affects only ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled</td></tr>
+<tr class=even><td>Package:</td><td>freertos</td></tr>
+<tr class=even><td>Package Version:</td><td>10.5.1</td></tr>
+<tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=even><td>CVSS Score:</td><td>8.8</td></tr>
+<tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.5.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>FreeRTOS is a real-time operating system for microcontrollers. FreeRTOS Kernel versions through 10.6.1 do not sufficiently protect against local privilege escalation via Return Oriented Programming techniques should a vulnerability exist that allows code injection and execution. These issues affect ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled (i.e. `configENABLE_MPU` set to 1). These issues are fixed in version 10.6.2 with a new MPU wrapper. </td></tr>
+<tr class=even><td></td><td></td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-52160">CVE-2023-52160</a></td></tr>
+<tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
+<tr class=odd><td>Not Applicable:</td><td>The relevant fix has been patched with https://github.com/espressif/esp-idf/commit/59a62f2af65945f92d475089f9ce66fce56cc737</td></tr>
+<tr class=odd><td>Package:</td><td>wpa_supplicant</td></tr>
+<tr class=odd><td>Package Version:</td><td>2.10</td></tr>
+<tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>6.5</td></tr>
+<tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:w1.fi:wpa_supplicant:2.10:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>The implementation of PEAP in wpa_supplicant through 2.10 allows authentication bypass. For a successful attack, wpa_supplicant must be configured to not verify the network's TLS certificate during Phase 1 authentication, and an eap_peap_decrypt vulnerability can then be abused to skip Phase 2 authentication. The attack vector is sending an EAP-TLV Success packet instead of starting Phase 2. This allows an adversary to impersonate Enterprise Wi-Fi networks.</td></tr>
+<tr class=odd><td></td><td></td></tr>
+
+    </table>
+    
+		</main>
+	</body>
+</html>
