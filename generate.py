@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import json
+import sys
 from pathlib import Path
 from string import Template
 from subprocess import run
@@ -29,7 +30,7 @@ def check_releases(releases: dict) -> dict:
     tmp_dir_path = Path(tmp_dir.name)
 
     for release, data in releases.items():
-        print(f'scanning {release}')
+        print(f'scanning {release}', file=sys.stderr)
         manifest = data['manifest']
         json_file_path = (tmp_dir_path / release).with_suffix('.json')
         run(['esp-idf-sbom',
