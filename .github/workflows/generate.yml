@@ -35,7 +35,7 @@ jobs:
         run: |
           git status
           git add .
-          git commit -m "report $(date -u '+%Y-%m-%d %H:%M')"
+          git diff --cached --quiet || git commit -m "report $(date -u '+%Y-%m-%d %H:%M')"
 
       - name: Push changes
         env:
