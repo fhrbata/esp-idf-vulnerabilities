@@ -130,6 +130,9 @@ manifests:
   manifest:
     cpe:
     - cpe:2.3:a:newlib_project:newlib:3.3.0:*:*:*:*:*:*:*
+    cve-exclude-list:
+    - cve: CVE-2021-3420
+      reason: ESP-IDF is NOT affected by this vulnerability in Newlib. ESP-IDF heap management routines include protection against this type of vulnerabilities since v3.1.4 and v3.2 releases.
     description: An open-source C standard library implementation with additional
       features and patches from Espressif.
     name: newlib
