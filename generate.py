@@ -56,7 +56,7 @@ def generate_summary_page(releases: dict):
     formatted_time = utc_now.strftime('%Y-%m-%d %H:%M:%S')
 
     content = f'''<p>
-    This page details known vulnerabilities affecting released ESP-IDF versions, current as of {formatted_time}.
+    This page details known vulnerabilities affecting released ESP-IDF versions, current as of {formatted_time} UTC.
     Additional insights into known vulnerabilities can be found in the
     <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/security/vulnerabilities.html">Vulnerabilities</a>
     page of the ESP-IDF Programming Guide.
