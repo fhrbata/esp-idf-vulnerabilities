@@ -222,19 +222,19 @@
 <tr class=odd><td>Description:</td><td>storeAtts in xmlparse.c in Expat (aka libexpat) before 2.4.3 has an integer overflow.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-46143">CVE-2021-46143</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28960">CVE-2024-28960</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>libexpat</td></tr>
-<tr class=even><td>Package Version:</td><td>2.4.1</td></tr>
+<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>8.1</td></tr>
+<tr class=even><td>CVSS Score:</td><td>8.2</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>In doProlog in xmlparse.c in Expat (aka libexpat) before 2.4.3, an integer overflow exists for m_groupSize.</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS 2.18.0 through 2.28.x before 2.28.8 and 3.x before 3.6.0, and Mbed Crypto. The PSA Crypto API mishandles shared memory.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-40674">CVE-2022-40674</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-46143">CVE-2021-46143</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>libexpat</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.4.1</td></tr>
@@ -243,58 +243,58 @@
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>libexpat before 2.4.9 has a use-after-free in the doContent function in xmlparse.c.</td></tr>
+<tr class=odd><td>Description:</td><td>In doProlog in xmlparse.c in Expat (aka libexpat) before 2.4.3, an integer overflow exists for m_groupSize.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-24893">CVE-2022-24893</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-40674">CVE-2022-40674</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>esp-idf</td></tr>
-<tr class=even><td>Package Version:</td><td>4.3.2</td></tr>
+<tr class=even><td>Package:</td><td>libexpat</td></tr>
+<tr class=even><td>Package Version:</td><td>2.4.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>7.5</td></tr>
+<tr class=even><td>CVSS Score:</td><td>8.1</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:espressif:esp-idf:4.3.2:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>ESP-IDF is the official development framework for Espressif SoCs. In Espressif’s Bluetooth Mesh SDK (`ESP-BLE-MESH`), a memory corruption vulnerability can be triggered during provisioning, because there is no check for the `SegN` field of the Transaction Start PDU. This can result in memory corruption related attacks and potentially attacker gaining control of the entire system. Patch commits are available on the 4.1, 4.2, 4.3 and 4.4 branches and users are recommended to upgrade. The upgrade is applicable for all applications and users of `ESP-BLE-MESH` component from `ESP-IDF`. As it is implemented in the Bluetooth Mesh stack, there is no workaround for the user to fix the application layer without upgrading the underlying firmware.</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>libexpat before 2.4.9 has a use-after-free in the doContent function in xmlparse.c.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-27209">CVE-2020-27209</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-24893">CVE-2022-24893</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=odd><td>Package:</td><td>micro-ecc</td></tr>
-<tr class=odd><td>Package Version:</td><td>1.0</td></tr>
+<tr class=odd><td>Package:</td><td>esp-idf</td></tr>
+<tr class=odd><td>Package Version:</td><td>4.3.2</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>7.5</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
-<tr class=odd><td>CPE:</td><td>cpe:2.3:a:micro-ecc_project:micro-ecc:1.0:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>The ECDSA operation of the micro-ecc library 1.0 is vulnerable to simple power analysis attacks which allows an adversary to extract the private ECC key.</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:espressif:esp-idf:4.3.2:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>ESP-IDF is the official development framework for Espressif SoCs. In Espressif’s Bluetooth Mesh SDK (`ESP-BLE-MESH`), a memory corruption vulnerability can be triggered during provisioning, because there is no check for the `SegN` field of the Transaction Start PDU. This can result in memory corruption related attacks and potentially attacker gaining control of the entire system. Patch commits are available on the 4.1, 4.2, 4.3 and 4.4 branches and users are recommended to upgrade. The upgrade is applicable for all applications and users of `ESP-BLE-MESH` component from `ESP-IDF`. As it is implemented in the Bluetooth Mesh stack, there is no workaround for the user to fix the application layer without upgrading the underlying firmware.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36423">CVE-2020-36423</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-27209">CVE-2020-27209</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
-<tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
+<tr class=even><td>Package:</td><td>micro-ecc</td></tr>
+<tr class=even><td>Package Version:</td><td>1.0</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=even><td>CVSS Score:</td><td>7.5</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. A remote attacker can recover plaintext because a certain Lucky 13 countermeasure doesn't properly consider the case of a hardware accelerator.</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:micro-ecc_project:micro-ecc:1.0:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>The ECDSA operation of the micro-ecc library 1.0 is vulnerable to simple power analysis attacks which allows an adversary to extract the private ECC key.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36426">CVE-2020-36426</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36423">CVE-2020-36423</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>7.5</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.24.0. mbedtls_x509_crl_parse_der has a buffer over-read (of one byte).</td></tr>
+<tr class=odd><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. A remote attacker can recover plaintext because a certain Lucky 13 countermeasure doesn't properly consider the case of a hardware accelerator.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36475">CVE-2020-36475</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36426">CVE-2020-36426</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
@@ -303,10 +303,34 @@
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.25.0 (and before 2.16.9 LTS and before 2.7.18 LTS). The calculations performed by mbedtls_mpi_exp_mod are not limited; thus, supplying overly large parameters could lead to denial of service when generating Diffie-Hellman key pairs.</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.24.0. mbedtls_x509_crl_parse_der has a buffer over-read (of one byte).</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36476">CVE-2020-36476</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36475">CVE-2020-36475</a></td></tr>
+<tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
+<tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
+<tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>7.5</td></tr>
+<tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.25.0 (and before 2.16.9 LTS and before 2.7.18 LTS). The calculations performed by mbedtls_mpi_exp_mod are not limited; thus, supplying overly large parameters could lead to denial of service when generating Diffie-Hellman key pairs.</td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=even><td></td><td></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36476">CVE-2020-36476</a></td></tr>
+<tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
+<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
+<tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=even><td>CVSS Score:</td><td>7.5</td></tr>
+<tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.24.0 (and before 2.16.8 LTS and before 2.7.17 LTS). There is missing zeroization of plaintext buffers in mbedtls_ssl_read to erase unused application data from memory.</td></tr>
+<tr class=even><td></td><td></td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36478">CVE-2020-36478</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
@@ -315,46 +339,22 @@
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.24.0 (and before 2.16.8 LTS and before 2.7.17 LTS). There is missing zeroization of plaintext buffers in mbedtls_ssl_read to erase unused application data from memory.</td></tr>
+<tr class=odd><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.25.0 (and before 2.16.9 LTS and before 2.7.18 LTS). A NULL algorithm parameters entry looks identical to an array of REAL (size zero) and thus the certificate is considered valid. However, if the parameters do not match in any way, then the certificate should be considered invalid.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36478">CVE-2020-36478</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-43666">CVE-2021-43666</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=even><td>CVSS Score:</td><td>7.5</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.25.0 (and before 2.16.9 LTS and before 2.7.18 LTS). A NULL algorithm parameters entry looks identical to an array of REAL (size zero) and thus the certificate is considered valid. However, if the parameters do not match in any way, then the certificate should be considered invalid.</td></tr>
+<tr class=even><td>Description:</td><td>A Denial of Service vulnerability exists in mbed TLS 3.0.0 and earlier in the mbedtls_pkcs12_derivation function when an input password's length is 0.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-43666">CVE-2021-43666</a></td></tr>
-<tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
-<tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
-<tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=odd><td>CVSS Score:</td><td>7.5</td></tr>
-<tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
-<tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>A Denial of Service vulnerability exists in mbed TLS 3.0.0 and earlier in the mbedtls_pkcs12_derivation function when an input password's length is 0.</td></tr>
-<tr class=odd><td></td><td></td></tr>
-<tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-45451">CVE-2021-45451</a></td></tr>
-<tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
-<tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
-<tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>7.5</td></tr>
-<tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>In Mbed TLS before 3.1.0, psa_aead_generate_nonce allows policy bypass or oracle-based decryption when the output buffer is at memory locations accessible to an untrusted application.</td></tr>
-<tr class=even><td></td><td></td></tr>
-<tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-43615">CVE-2023-43615</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-45451">CVE-2021-45451</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
@@ -363,46 +363,46 @@
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>Mbed TLS 2.x before 2.28.5 and 3.x before 3.5.0 has a Buffer Overflow.</td></tr>
+<tr class=odd><td>Description:</td><td>In Mbed TLS before 3.1.0, psa_aead_generate_nonce allows policy bypass or oracle-based decryption when the output buffer is at memory locations accessible to an untrusted application.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-52353">CVE-2023-52353</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-43615">CVE-2023-43615</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=even><td>CVSS Score:</td><td>7.5</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS through 3.5.1. In mbedtls_ssl_session_reset, the maximum negotiable TLS version is mishandled. For example, if the last connection negotiated TLS 1.2, then 1.2 becomes the new maximum.</td></tr>
+<tr class=even><td>Description:</td><td>Mbed TLS 2.x before 2.28.5 and 3.x before 3.5.0 has a Buffer Overflow.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-23775">CVE-2024-23775</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-52353">CVE-2023-52353</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>7.5</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>Integer Overflow vulnerability in Mbed TLS 2.x before 2.28.7 and 3.x before 3.5.2, allows attackers to cause a denial of service (DoS) via mbedtls_x509_set_extension().</td></tr>
+<tr class=odd><td>Description:</td><td>An issue was discovered in Mbed TLS through 3.5.1. In mbedtls_ssl_session_reset, the maximum negotiable TLS version is mishandled. For example, if the last connection negotiated TLS 1.2, then 1.2 becomes the new maximum.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-23990">CVE-2022-23990</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-23775">CVE-2024-23775</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>libexpat</td></tr>
-<tr class=even><td>Package Version:</td><td>2.4.1</td></tr>
+<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=even><td>CVSS Score:</td><td>7.5</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>Expat (aka libexpat) before 2.4.4 has an integer overflow in the doProlog function.</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>Integer Overflow vulnerability in Mbed TLS 2.x before 2.28.7 and 3.x before 3.5.2, allows attackers to cause a denial of service (DoS) via mbedtls_x509_set_extension().</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25314">CVE-2022-25314</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-23990">CVE-2022-23990</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>libexpat</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.4.1</td></tr>
@@ -411,10 +411,10 @@
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>In Expat (aka libexpat) before 2.4.5, there is an integer overflow in copyString.</td></tr>
+<tr class=odd><td>Description:</td><td>Expat (aka libexpat) before 2.4.4 has an integer overflow in the doProlog function.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-43680">CVE-2022-43680</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25314">CVE-2022-25314</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>libexpat</td></tr>
 <tr class=even><td>Package Version:</td><td>2.4.1</td></tr>
@@ -423,10 +423,10 @@
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>In libexpat through 2.4.9, there is a use-after free caused by overeager destruction of a shared DTD in XML_ExternalEntityParserCreate in out-of-memory situations.</td></tr>
+<tr class=even><td>Description:</td><td>In Expat (aka libexpat) before 2.4.5, there is an integer overflow in copyString.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-52425">CVE-2023-52425</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-43680">CVE-2022-43680</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>libexpat</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.4.1</td></tr>
@@ -435,10 +435,10 @@
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.</td></tr>
+<tr class=odd><td>Description:</td><td>In libexpat through 2.4.9, there is a use-after free caused by overeager destruction of a shared DTD in XML_ExternalEntityParserCreate in out-of-memory situations.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28757">CVE-2024-28757</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-52425">CVE-2023-52425</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>libexpat</td></tr>
 <tr class=even><td>Package Version:</td><td>2.4.1</td></tr>
@@ -447,10 +447,10 @@
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>libexpat through 2.6.1 allows an XML Entity Expansion attack when there is isolated use of external parsers (created via XML_ExternalEntityParserCreate).</td></tr>
+<tr class=even><td>Description:</td><td>libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-45490">CVE-2024-45490</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28757">CVE-2024-28757</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>libexpat</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.4.1</td></tr>
@@ -459,22 +459,22 @@
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in libexpat before 2.6.3. xmlparse.c does not reject a negative length for XML_ParseBuffer.</td></tr>
+<tr class=odd><td>Description:</td><td>libexpat through 2.6.1 allows an XML Entity Expansion attack when there is isolated use of external parsers (created via XML_ExternalEntityParserCreate).</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-28135">CVE-2021-28135</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-45490">CVE-2024-45490</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>esp-idf</td></tr>
-<tr class=even><td>Package Version:</td><td>4.3.2</td></tr>
+<tr class=even><td>Package:</td><td>libexpat</td></tr>
+<tr class=even><td>Package Version:</td><td>2.4.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>6.5</td></tr>
-<tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:espressif:esp-idf:4.3.2:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>The Bluetooth Classic implementation in Espressif ESP-IDF 4.4 and earlier does not properly handle the reception of continuous unsolicited LMP responses, allowing attackers in radio range to trigger a denial of service (crash) in ESP32 by flooding the target device with LMP Feature Response data.</td></tr>
+<tr class=even><td>CVSS Score:</td><td>7.5</td></tr>
+<tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in libexpat before 2.6.3. xmlparse.c does not reject a negative length for XML_ParseBuffer.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-28136">CVE-2021-28136</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-28135">CVE-2021-28135</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>esp-idf</td></tr>
 <tr class=odd><td>Package Version:</td><td>4.3.2</td></tr>
@@ -483,82 +483,82 @@
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:espressif:esp-idf:4.3.2:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>The Bluetooth Classic implementation in Espressif ESP-IDF 4.4 and earlier does not properly handle the reception of multiple LMP IO Capability Request packets during the pairing process, allowing attackers in radio range to trigger memory corruption (and consequently a crash) in ESP32 via a replayed (duplicated) LMP packet.</td></tr>
+<tr class=odd><td>Description:</td><td>The Bluetooth Classic implementation in Espressif ESP-IDF 4.4 and earlier does not properly handle the reception of continuous unsolicited LMP responses, allowing attackers in radio range to trigger a denial of service (crash) in ESP32 by flooding the target device with LMP Feature Response data.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25313">CVE-2022-25313</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-28136">CVE-2021-28136</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>libexpat</td></tr>
-<tr class=even><td>Package Version:</td><td>2.4.1</td></tr>
+<tr class=even><td>Package:</td><td>esp-idf</td></tr>
+<tr class=even><td>Package Version:</td><td>4.3.2</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=even><td>CVSS Score:</td><td>6.5</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>In Expat (aka libexpat) before 2.4.5, an attacker can trigger stack exhaustion in build_model via a large nesting depth in the DTD element.</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:espressif:esp-idf:4.3.2:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>The Bluetooth Classic implementation in Espressif ESP-IDF 4.4 and earlier does not properly handle the reception of multiple LMP IO Capability Request packets during the pairing process, allowing attackers in radio range to trigger memory corruption (and consequently a crash) in ESP32 via a replayed (duplicated) LMP packet.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-52160">CVE-2023-52160</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25313">CVE-2022-25313</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=odd><td>Package:</td><td>wpa_supplicant</td></tr>
-<tr class=odd><td>Package Version:</td><td>2.10</td></tr>
+<tr class=odd><td>Package:</td><td>libexpat</td></tr>
+<tr class=odd><td>Package Version:</td><td>2.4.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>6.5</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
-<tr class=odd><td>CPE:</td><td>cpe:2.3:a:w1.fi:wpa_supplicant:2.10:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>The implementation of PEAP in wpa_supplicant through 2.10 allows authentication bypass. For a successful attack, wpa_supplicant must be configured to not verify the network's TLS certificate during Phase 1 authentication, and an eap_peap_decrypt vulnerability can then be abused to skip Phase 2 authentication. The attack vector is sending an EAP-TLV Success packet instead of starting Phase 2. This allows an adversary to impersonate Enterprise Wi-Fi networks.</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>In Expat (aka libexpat) before 2.4.5, an attacker can trigger stack exhaustion in build_model via a large nesting depth in the DTD element.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-10941">CVE-2020-10941</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-52160">CVE-2023-52160</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
-<tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
+<tr class=even><td>Package:</td><td>wpa_supplicant</td></tr>
+<tr class=even><td>Package Version:</td><td>2.10</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>5.9</td></tr>
+<tr class=even><td>CVSS Score:</td><td>6.5</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>Arm Mbed TLS before 2.16.5 allows attackers to obtain sensitive information (an RSA private key) by measuring cache usage during an import.</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:w1.fi:wpa_supplicant:2.10:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>The implementation of PEAP in wpa_supplicant through 2.10 allows authentication bypass. For a successful attack, wpa_supplicant must be configured to not verify the network's TLS certificate during Phase 1 authentication, and an eap_peap_decrypt vulnerability can then be abused to skip Phase 2 authentication. The attack vector is sending an EAP-TLV Success packet instead of starting Phase 2. This allows an adversary to impersonate Enterprise Wi-Fi networks.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36477">CVE-2020-36477</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-10941">CVE-2020-10941</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>5.9</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.24.0. The verification of X.509 certificates when matching the expected common name (the cn argument of mbedtls_x509_crt_verify) with the actual certificate name is mishandled: when the subjecAltName extension is present, the expected name is compared to any name in that extension regardless of its type. This means that an attacker could impersonate a 4-byte or 16-byte domain by getting a certificate for the corresponding IPv4 or IPv6 address (this would require the attacker to control that IP address, though).</td></tr>
+<tr class=odd><td>Description:</td><td>Arm Mbed TLS before 2.16.5 allows attackers to obtain sensitive information (an RSA private key) by measuring cache usage during an import.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-48468">CVE-2022-48468</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36477">CVE-2020-36477</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>protobuf-c</td></tr>
-<tr class=even><td>Package Version:</td><td>1.3.0</td></tr>
+<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>5.5</td></tr>
+<tr class=even><td>CVSS Score:</td><td>5.9</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:protobuf-c_project:protobuf-c:1.3.0:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>protobuf-c before 1.4.1 has an unsigned integer overflow in parse_required_member.</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.24.0. The verification of X.509 certificates when matching the expected common name (the cn argument of mbedtls_x509_crt_verify) with the actual certificate name is mishandled: when the subjecAltName extension is present, the expected name is compared to any name in that extension regardless of its type. This means that an attacker could impersonate a 4-byte or 16-byte domain by getting a certificate for the corresponding IPv4 or IPv6 address (this would require the attacker to control that IP address, though).</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-16150">CVE-2020-16150</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-48468">CVE-2022-48468</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
-<tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
+<tr class=odd><td>Package:</td><td>protobuf-c</td></tr>
+<tr class=odd><td>Package Version:</td><td>1.3.0</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>5.5</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N</td></tr>
-<tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>A Lucky 13 timing side channel in mbedtls_ssl_decrypt_buf in library/ssl_msg.c in Trusted Firmware Mbed TLS through 2.23.0 allows an attacker to recover secret key information. This affects CBC mode because of a computed time difference based on a padding length.</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:protobuf-c_project:protobuf-c:1.3.0:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>protobuf-c before 1.4.1 has an unsigned integer overflow in parse_required_member.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-23170">CVE-2024-23170</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-16150">CVE-2020-16150</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
@@ -567,46 +567,46 @@
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS 2.x before 2.28.7 and 3.x before 3.5.2. There was a timing side channel in RSA private operations. This side channel could be sufficient for a local attacker to recover the plaintext. It requires the attacker to send a large number of messages for decryption, as described in "Everlasting ROBOT: the Marvin Attack" by Hubert Kario.</td></tr>
+<tr class=even><td>Description:</td><td>A Lucky 13 timing side channel in mbedtls_ssl_decrypt_buf in library/ssl_msg.c in Trusted Firmware Mbed TLS through 2.23.0 allows an attacker to recover secret key information. This affects CBC mode because of a computed time difference based on a padding length.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-52426">CVE-2023-52426</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-23170">CVE-2024-23170</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=odd><td>Package:</td><td>libexpat</td></tr>
-<tr class=odd><td>Package Version:</td><td>2.4.1</td></tr>
+<tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>5.5</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H</td></tr>
-<tr class=odd><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>libexpat through 2.5.0 allows recursive XML Entity Expansion if XML_DTD is undefined at compile time.</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>An issue was discovered in Mbed TLS 2.x before 2.28.7 and 3.x before 3.5.2. There was a timing side channel in RSA private operations. This side channel could be sufficient for a local attacker to recover the plaintext. It requires the attacker to send a large number of messages for decryption, as described in "Everlasting ROBOT: the Marvin Attack" by Hubert Kario.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-16910">CVE-2019-16910</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-52426">CVE-2023-52426</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
-<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
-<tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
+<tr class=even><td>Package:</td><td>libexpat</td></tr>
+<tr class=even><td>Package Version:</td><td>2.4.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>5.3</td></tr>
+<tr class=even><td>CVSS Score:</td><td>5.5</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>Arm Mbed TLS before 2.19.0 and Arm Mbed Crypto before 2.0.0, when deterministic ECDSA is enabled, use an RNG with insufficient entropy for blinding, which might allow an attacker to recover a private key via side-channel attacks if a victim signs the same message many times. (For Mbed TLS, the fix is also available in versions 2.7.12 and 2.16.3.)</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:libexpat_project:libexpat:2.4.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>libexpat through 2.5.0 allows recursive XML Entity Expansion if XML_DTD is undefined at compile time.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36421">CVE-2020-36421</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-16910">CVE-2019-16910</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>5.3</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. Because of a side channel in modular exponentiation, an RSA private key used in a secure enclave could be disclosed.</td></tr>
+<tr class=odd><td>Description:</td><td>Arm Mbed TLS before 2.19.0 and Arm Mbed Crypto before 2.0.0, when deterministic ECDSA is enabled, use an RNG with insufficient entropy for blinding, which might allow an attacker to recover a private key via side-channel attacks if a victim signs the same message many times. (For Mbed TLS, the fix is also available in versions 2.7.12 and 2.16.3.)</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36422">CVE-2020-36422</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36421">CVE-2020-36421</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
@@ -615,58 +615,58 @@
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. A side channel allows recovery of an ECC private key, related to mbedtls_ecp_check_pub_priv, mbedtls_pk_parse_key, mbedtls_pk_parse_keyfile, mbedtls_ecp_mul, and mbedtls_ecp_mul_restartable.</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. Because of a side channel in modular exponentiation, an RSA private key used in a secure enclave could be disclosed.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36425">CVE-2020-36425</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36422">CVE-2020-36422</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>5.3</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.24.0. It incorrectly uses a revocationDate check when deciding whether to honor certificate revocation via a CRL. In some situations, an attacker can exploit this by changing the local clock.</td></tr>
+<tr class=odd><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. A side channel allows recovery of an ECC private key, related to mbedtls_ecp_check_pub_priv, mbedtls_pk_parse_key, mbedtls_pk_parse_keyfile, mbedtls_ecp_mul, and mbedtls_ecp_mul_restartable.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-46392">CVE-2022-46392</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36425">CVE-2020-36425</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=even><td>CVSS Score:</td><td>5.3</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.28.2 and 3.x before 3.3.0. An adversary with access to precise enough information about memory accesses (typically, an untrusted operating system attacking a secure enclave) can recover an RSA private key after observing the victim performing a single private-key operation, if the window size (MBEDTLS_MPI_WINDOW_SIZE) used for the exponentiation is 3 or smaller.</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.24.0. It incorrectly uses a revocationDate check when deciding whether to honor certificate revocation via a CRL. In some situations, an attacker can exploit this by changing the local clock.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-24119">CVE-2021-24119</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-46392">CVE-2022-46392</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=odd><td>CVSS Score:</td><td>4.9</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>5.3</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>In Trusted Firmware Mbed TLS 2.24.0, a side-channel vulnerability in base64 PEM file decoding allows system-level (administrator) attackers to obtain information about secret RSA keys via a controlled-channel and side-channel attack on software running in isolated environments that can be single stepped, especially Intel SGX.</td></tr>
+<tr class=odd><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.28.2 and 3.x before 3.3.0. An adversary with access to precise enough information about memory accesses (typically, an untrusted operating system attacking a secure enclave) can recover an RSA private key after observing the victim performing a single private-key operation, if the window size (MBEDTLS_MPI_WINDOW_SIZE) used for the exponentiation is 3 or smaller.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-18222">CVE-2019-18222</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-24119">CVE-2021-24119</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>4.7</td></tr>
+<tr class=even><td>CVSS Score:</td><td>4.9</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>The ECDSA signature implementation in ecdsa.c in Arm Mbed Crypto 2.1 and Mbed TLS through 2.19.1 does not reduce the blinded scalar before computing the inverse, which allows a local attacker to recover the private key via side-channel attacks.</td></tr>
+<tr class=even><td>Description:</td><td>In Trusted Firmware Mbed TLS 2.24.0, a side-channel vulnerability in base64 PEM file decoding allows system-level (administrator) attackers to obtain information about secret RSA keys via a controlled-channel and side-channel attack on software running in isolated environments that can be single stepped, especially Intel SGX.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36424">CVE-2020-36424</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-18222">CVE-2019-18222</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
@@ -675,10 +675,10 @@
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.24.0. An attacker can recover a private key (for RSA or static Diffie-Hellman) via a side-channel attack against generation of base blinding/unblinding values.</td></tr>
+<tr class=odd><td>Description:</td><td>The ECDSA signature implementation in ecdsa.c in Arm Mbed Crypto 2.1 and Mbed TLS through 2.19.1 does not reduce the blinded scalar before computing the inverse, which allows a local attacker to recover the private key via side-channel attacks.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-36647">CVE-2021-36647</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36424">CVE-2020-36424</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
@@ -687,23 +687,22 @@
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>Use of a Broken or Risky Cryptographic Algorithm in the function mbedtls_mpi_exp_mod() in lignum.c in Mbed TLS Mbed TLS all versions before 3.0.0, 2.27.0 or 2.16.11 allows attackers with access to precise enough timing and memory access information (typically an untrusted operating system attacking a secure enclave such as SGX or the TrustZone secure world) to recover the private keys used in RSA.</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.24.0. An attacker can recover a private key (for RSA or static Diffie-Hellman) via a side-channel attack against generation of base blinding/unblinding values.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-31571">CVE-2021-31571</a></td></tr>
-<tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=odd><td>Not Applicable:</td><td>The fix for this vulnerability has been incorporated in the FreeRTOS kernel being used in ESP-IDF v4.3. For details, refer https://www.espressif.com/sites/default/files/advisory_downloads/AR2021-005%20Security%20Advisory%20on%20BadAlloc%20Vulnerabilities.pdf.</td></tr>
-<tr class=odd><td>Package:</td><td>freertos</td></tr>
-<tr class=odd><td>Package Version:</td><td>10.2.1</td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-36647">CVE-2021-36647</a></td></tr>
+<tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
+<tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=odd><td>CVSS Score:</td><td>9.8</td></tr>
-<tr class=odd><td>CVSS Severity:</td><td>CRITICAL</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
-<tr class=odd><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has an integer overflow in queue.c for queue creation.</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>4.7</td></tr>
+<tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>Use of a Broken or Risky Cryptographic Algorithm in the function mbedtls_mpi_exp_mod() in lignum.c in Mbed TLS Mbed TLS all versions before 3.0.0, 2.27.0 or 2.16.11 allows attackers with access to precise enough timing and memory access information (typically an untrusted operating system attacking a secure enclave such as SGX or the TrustZone secure world) to recover the private keys used in RSA.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-31572">CVE-2021-31572</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-31571">CVE-2021-31571</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
 <tr class=even><td>Not Applicable:</td><td>The fix for this vulnerability has been incorporated in the FreeRTOS kernel being used in ESP-IDF v4.3. For details, refer https://www.espressif.com/sites/default/files/advisory_downloads/AR2021-005%20Security%20Advisory%20on%20BadAlloc%20Vulnerabilities.pdf.</td></tr>
 <tr class=even><td>Package:</td><td>freertos</td></tr>
@@ -713,12 +712,12 @@
 <tr class=even><td>CVSS Severity:</td><td>CRITICAL</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has an integer overflow in stream_buffer.c for a stream buffer.</td></tr>
+<tr class=even><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has an integer overflow in queue.c for queue creation.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-32020">CVE-2021-32020</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-31572">CVE-2021-31572</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=odd><td>Not Applicable:</td><td>This vulnerability only affects native FreeRTOS heap allocation schemes and ESP-IDF uses its own scheme for dynamic memory management.</td></tr>
+<tr class=odd><td>Not Applicable:</td><td>The fix for this vulnerability has been incorporated in the FreeRTOS kernel being used in ESP-IDF v4.3. For details, refer https://www.espressif.com/sites/default/files/advisory_downloads/AR2021-005%20Security%20Advisory%20on%20BadAlloc%20Vulnerabilities.pdf.</td></tr>
 <tr class=odd><td>Package:</td><td>freertos</td></tr>
 <tr class=odd><td>Package Version:</td><td>10.2.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
@@ -726,47 +725,60 @@
 <tr class=odd><td>CVSS Severity:</td><td>CRITICAL</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has insufficient bounds checking during management of heap memory.</td></tr>
+<tr class=odd><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has an integer overflow in stream_buffer.c for a stream buffer.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3420">CVE-2021-3420</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-32020">CVE-2021-32020</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=even><td>Not Applicable:</td><td>ESP-IDF is NOT affected by this vulnerability in Newlib. ESP-IDF heap management routines include protection against this type of vulnerabilities since v3.1.4 and v3.2 releases.</td></tr>
-<tr class=even><td>Package:</td><td>newlib</td></tr>
-<tr class=even><td>Package Version:</td><td>3.3.0</td></tr>
+<tr class=even><td>Not Applicable:</td><td>This vulnerability only affects native FreeRTOS heap allocation schemes and ESP-IDF uses its own scheme for dynamic memory management.</td></tr>
+<tr class=even><td>Package:</td><td>freertos</td></tr>
+<tr class=even><td>Package Version:</td><td>10.2.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=even><td>CVSS Score:</td><td>9.8</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>CRITICAL</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:newlib_project:newlib:3.3.0:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>A flaw was found in newlib in versions prior to 4.0.0. Improper overflow validation in the memory allocation functions mEMALIGn, pvALLOc, nano_memalign, nano_valloc, nano_pvalloc could case an integer overflow, leading to an allocation of a small buffer and then to a heap-based buffer overflow.</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has insufficient bounds checking during management of heap memory.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28115">CVE-2024-28115</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3420">CVE-2021-3420</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=odd><td>Not Applicable:</td><td>Affects only ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled</td></tr>
-<tr class=odd><td>Package:</td><td>freertos</td></tr>
-<tr class=odd><td>Package Version:</td><td>10.2.1</td></tr>
+<tr class=odd><td>Not Applicable:</td><td>ESP-IDF is NOT affected by this vulnerability in Newlib. ESP-IDF heap management routines include protection against this type of vulnerabilities since v3.1.4 and v3.2 releases.</td></tr>
+<tr class=odd><td>Package:</td><td>newlib</td></tr>
+<tr class=odd><td>Package Version:</td><td>3.3.0</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=odd><td>CVSS Score:</td><td>8.8</td></tr>
-<tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H</td></tr>
-<tr class=odd><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>FreeRTOS is a real-time operating system for microcontrollers. FreeRTOS Kernel versions through 10.6.1 do not sufficiently protect against local privilege escalation via Return Oriented Programming techniques should a vulnerability exist that allows code injection and execution. These issues affect ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled (i.e. `configENABLE_MPU` set to 1). These issues are fixed in version 10.6.2 with a new MPU wrapper. </td></tr>
+<tr class=odd><td>CVSS Score:</td><td>9.8</td></tr>
+<tr class=odd><td>CVSS Severity:</td><td>CRITICAL</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:newlib_project:newlib:3.3.0:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>A flaw was found in newlib in versions prior to 4.0.0. Improper overflow validation in the memory allocation functions mEMALIGn, pvALLOc, nano_memalign, nano_valloc, nano_pvalloc could case an integer overflow, leading to an allocation of a small buffer and then to a heap-based buffer overflow.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-43997">CVE-2021-43997</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28115">CVE-2024-28115</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=even><td>Not Applicable:</td><td>This vulnerability only affects ARMv7-M and ARMv8-M ports of FreeRTOS and hence does not affect Espressif SoCs which are not based on these architectures.</td></tr>
+<tr class=even><td>Not Applicable:</td><td>Affects only ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled</td></tr>
 <tr class=even><td>Package:</td><td>freertos</td></tr>
 <tr class=even><td>Package Version:</td><td>10.2.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>7.8</td></tr>
+<tr class=even><td>CVSS Score:</td><td>8.8</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>FreeRTOS versions 10.2.0 through 10.4.5 do not prevent non-kernel code from calling the xPortRaisePrivilege internal function to raise privilege. FreeRTOS versions through 10.4.6 do not prevent a third party that has already independently gained the ability to execute injected code to achieve further privilege escalation by branching directly inside a FreeRTOS MPU API wrapper function with a manually crafted stack frame. These issues affect ARMv7-M MPU ports, and ARMv8-M ports with MPU support enabled (i.e. configENABLE_MPU set to 1). These are fixed in V10.5.0 and in V10.4.3-LTS Patch 3.</td></tr>
+<tr class=even><td>Description:</td><td>FreeRTOS is a real-time operating system for microcontrollers. FreeRTOS Kernel versions through 10.6.1 do not sufficiently protect against local privilege escalation via Return Oriented Programming techniques should a vulnerability exist that allows code injection and execution. These issues affect ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled (i.e. `configENABLE_MPU` set to 1). These issues are fixed in version 10.6.2 with a new MPU wrapper. </td></tr>
 <tr class=even><td></td><td></td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-43997">CVE-2021-43997</a></td></tr>
+<tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
+<tr class=odd><td>Not Applicable:</td><td>This vulnerability only affects ARMv7-M and ARMv8-M ports of FreeRTOS and hence does not affect Espressif SoCs which are not based on these architectures.</td></tr>
+<tr class=odd><td>Package:</td><td>freertos</td></tr>
+<tr class=odd><td>Package Version:</td><td>10.2.1</td></tr>
+<tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>7.8</td></tr>
+<tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>FreeRTOS versions 10.2.0 through 10.4.5 do not prevent non-kernel code from calling the xPortRaisePrivilege internal function to raise privilege. FreeRTOS versions through 10.4.6 do not prevent a third party that has already independently gained the ability to execute injected code to achieve further privilege escalation by branching directly inside a FreeRTOS MPU API wrapper function with a manually crafted stack frame. These issues affect ARMv7-M MPU ports, and ARMv8-M ports with MPU support enabled (i.e. configENABLE_MPU set to 1). These are fixed in V10.5.0 and in V10.4.3-LTS Patch 3.</td></tr>
+<tr class=odd><td></td><td></td></tr>
 
     </table>
     
