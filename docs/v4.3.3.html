@@ -510,20 +510,19 @@
 <tr class=odd><td>Description:</td><td>Use of a Broken or Risky Cryptographic Algorithm in the function mbedtls_mpi_exp_mod() in lignum.c in Mbed TLS Mbed TLS all versions before 3.0.0, 2.27.0 or 2.16.11 allows attackers with access to precise enough timing and memory access information (typically an untrusted operating system attacking a secure enclave such as SGX or the TrustZone secure world) to recover the private keys used in RSA.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-31571">CVE-2021-31571</a></td></tr>
-<tr class=even><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=even><td>Not Applicable:</td><td>The fix for this vulnerability has been incorporated in the FreeRTOS kernel being used in ESP-IDF v4.3. For details, refer https://www.espressif.com/sites/default/files/advisory_downloads/AR2021-005%20Security%20Advisory%20on%20BadAlloc%20Vulnerabilities.pdf.</td></tr>
-<tr class=even><td>Package:</td><td>freertos</td></tr>
-<tr class=even><td>Package Version:</td><td>10.2.1</td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-53154">CVE-2023-53154</a></td></tr>
+<tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
+<tr class=even><td>Package:</td><td>cjson</td></tr>
+<tr class=even><td>Package Version:</td><td>1.7.15</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>9.8</td></tr>
-<tr class=even><td>CVSS Severity:</td><td>CRITICAL</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has an integer overflow in queue.c for queue creation.</td></tr>
+<tr class=even><td>CVSS Score:</td><td>2.9</td></tr>
+<tr class=even><td>CVSS Severity:</td><td>LOW</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:cjson_project:cjson:1.7.15:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>parse_string in cJSON before 1.7.18 has a heap-based buffer over-read via {"1":1, with no trailing newline if cJSON_ParseWithLength is called.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-31572">CVE-2021-31572</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-31571">CVE-2021-31571</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
 <tr class=odd><td>Not Applicable:</td><td>The fix for this vulnerability has been incorporated in the FreeRTOS kernel being used in ESP-IDF v4.3. For details, refer https://www.espressif.com/sites/default/files/advisory_downloads/AR2021-005%20Security%20Advisory%20on%20BadAlloc%20Vulnerabilities.pdf.</td></tr>
 <tr class=odd><td>Package:</td><td>freertos</td></tr>
@@ -533,12 +532,12 @@
 <tr class=odd><td>CVSS Severity:</td><td>CRITICAL</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has an integer overflow in stream_buffer.c for a stream buffer.</td></tr>
+<tr class=odd><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has an integer overflow in queue.c for queue creation.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-32020">CVE-2021-32020</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-31572">CVE-2021-31572</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=even><td>Not Applicable:</td><td>This vulnerability only affects native FreeRTOS heap allocation schemes and ESP-IDF uses its own scheme for dynamic memory management.</td></tr>
+<tr class=even><td>Not Applicable:</td><td>The fix for this vulnerability has been incorporated in the FreeRTOS kernel being used in ESP-IDF v4.3. For details, refer https://www.espressif.com/sites/default/files/advisory_downloads/AR2021-005%20Security%20Advisory%20on%20BadAlloc%20Vulnerabilities.pdf.</td></tr>
 <tr class=even><td>Package:</td><td>freertos</td></tr>
 <tr class=even><td>Package Version:</td><td>10.2.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
@@ -546,60 +545,73 @@
 <tr class=even><td>CVSS Severity:</td><td>CRITICAL</td></tr>
 <tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has insufficient bounds checking during management of heap memory.</td></tr>
+<tr class=even><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has an integer overflow in stream_buffer.c for a stream buffer.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3420">CVE-2021-3420</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-32020">CVE-2021-32020</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=odd><td>Not Applicable:</td><td>ESP-IDF is NOT affected by this vulnerability in Newlib. ESP-IDF heap management routines include protection against this type of vulnerabilities since v3.1.4 and v3.2 releases.</td></tr>
-<tr class=odd><td>Package:</td><td>newlib</td></tr>
-<tr class=odd><td>Package Version:</td><td>3.3.0</td></tr>
+<tr class=odd><td>Not Applicable:</td><td>This vulnerability only affects native FreeRTOS heap allocation schemes and ESP-IDF uses its own scheme for dynamic memory management.</td></tr>
+<tr class=odd><td>Package:</td><td>freertos</td></tr>
+<tr class=odd><td>Package Version:</td><td>10.2.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>9.8</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>CRITICAL</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
-<tr class=odd><td>CPE:</td><td>cpe:2.3:a:newlib_project:newlib:3.3.0:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>A flaw was found in newlib in versions prior to 4.0.0. Improper overflow validation in the memory allocation functions mEMALIGn, pvALLOc, nano_memalign, nano_valloc, nano_pvalloc could case an integer overflow, leading to an allocation of a small buffer and then to a heap-based buffer overflow.</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>The kernel in Amazon Web Services FreeRTOS before 10.4.3 has insufficient bounds checking during management of heap memory.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28115">CVE-2024-28115</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3420">CVE-2021-3420</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=even><td>Not Applicable:</td><td>Affects only ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled</td></tr>
-<tr class=even><td>Package:</td><td>freertos</td></tr>
-<tr class=even><td>Package Version:</td><td>10.2.1</td></tr>
+<tr class=even><td>Not Applicable:</td><td>ESP-IDF is NOT affected by this vulnerability in Newlib. ESP-IDF heap management routines include protection against this type of vulnerabilities since v3.1.4 and v3.2 releases.</td></tr>
+<tr class=even><td>Package:</td><td>newlib</td></tr>
+<tr class=even><td>Package Version:</td><td>3.3.0</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>8.8</td></tr>
-<tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>FreeRTOS is a real-time operating system for microcontrollers. FreeRTOS Kernel versions through 10.6.1 do not sufficiently protect against local privilege escalation via Return Oriented Programming techniques should a vulnerability exist that allows code injection and execution. These issues affect ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled (i.e. `configENABLE_MPU` set to 1). These issues are fixed in version 10.6.2 with a new MPU wrapper. </td></tr>
+<tr class=even><td>CVSS Score:</td><td>9.8</td></tr>
+<tr class=even><td>CVSS Severity:</td><td>CRITICAL</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:newlib_project:newlib:3.3.0:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>A flaw was found in newlib in versions prior to 4.0.0. Improper overflow validation in the memory allocation functions mEMALIGn, pvALLOc, nano_memalign, nano_valloc, nano_pvalloc could case an integer overflow, leading to an allocation of a small buffer and then to a heap-based buffer overflow.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-43997">CVE-2021-43997</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28115">CVE-2024-28115</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=odd><td>Not Applicable:</td><td>This vulnerability only affects ARMv7-M and ARMv8-M ports of FreeRTOS and hence does not affect Espressif SoCs which are not based on these architectures.</td></tr>
+<tr class=odd><td>Not Applicable:</td><td>Affects only ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled</td></tr>
 <tr class=odd><td>Package:</td><td>freertos</td></tr>
 <tr class=odd><td>Package Version:</td><td>10.2.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=odd><td>CVSS Score:</td><td>7.8</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>8.8</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>FreeRTOS versions 10.2.0 through 10.4.5 do not prevent non-kernel code from calling the xPortRaisePrivilege internal function to raise privilege. FreeRTOS versions through 10.4.6 do not prevent a third party that has already independently gained the ability to execute injected code to achieve further privilege escalation by branching directly inside a FreeRTOS MPU API wrapper function with a manually crafted stack frame. These issues affect ARMv7-M MPU ports, and ARMv8-M ports with MPU support enabled (i.e. configENABLE_MPU set to 1). These are fixed in V10.5.0 and in V10.4.3-LTS Patch 3.</td></tr>
+<tr class=odd><td>Description:</td><td>FreeRTOS is a real-time operating system for microcontrollers. FreeRTOS Kernel versions through 10.6.1 do not sufficiently protect against local privilege escalation via Return Oriented Programming techniques should a vulnerability exist that allows code injection and execution. These issues affect ARMv7-M MPU ports, and ARMv8-M ports with Memory Protected Unit (MPU) support enabled (i.e. `configENABLE_MPU` set to 1). These issues are fixed in version 10.6.2 with a new MPU wrapper. </td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-22284">CVE-2020-22284</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-43997">CVE-2021-43997</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
-<tr class=even><td>Not Applicable:</td><td>The fix for this vulnerability has been incorporated from the lwIP project upstream as ecd6009a, 6ffe30d9 and 8f5a0aaa.</td></tr>
-<tr class=even><td>Package:</td><td>lwip</td></tr>
-<tr class=even><td>Package Version:</td><td>2.1.2</td></tr>
+<tr class=even><td>Not Applicable:</td><td>This vulnerability only affects ARMv7-M and ARMv8-M ports of FreeRTOS and hence does not affect Espressif SoCs which are not based on these architectures.</td></tr>
+<tr class=even><td>Package:</td><td>freertos</td></tr>
+<tr class=even><td>Package Version:</td><td>10.2.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>7.5</td></tr>
+<tr class=even><td>CVSS Score:</td><td>7.8</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>HIGH</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
-<tr class=even><td>CPE:</td><td>cpe:2.3:a:lwip_project:lwip:2.1.2:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>A buffer overflow vulnerability in the zepif_linkoutput() function of Free Software Foundation lwIP git head version and version 2.1.2 allows attackers to access sensitive information via a crafted 6LoWPAN packet.</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:o:amazon:freertos:10.2.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>FreeRTOS versions 10.2.0 through 10.4.5 do not prevent non-kernel code from calling the xPortRaisePrivilege internal function to raise privilege. FreeRTOS versions through 10.4.6 do not prevent a third party that has already independently gained the ability to execute injected code to achieve further privilege escalation by branching directly inside a FreeRTOS MPU API wrapper function with a manually crafted stack frame. These issues affect ARMv7-M MPU ports, and ARMv8-M ports with MPU support enabled (i.e. configENABLE_MPU set to 1). These are fixed in V10.5.0 and in V10.4.3-LTS Patch 3.</td></tr>
 <tr class=even><td></td><td></td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-22284">CVE-2020-22284</a></td></tr>
+<tr class=odd><td>Vulnerable:</td><td><div class="green">no</div></td></tr>
+<tr class=odd><td>Not Applicable:</td><td>The fix for this vulnerability has been incorporated from the lwIP project upstream as ecd6009a, 6ffe30d9 and 8f5a0aaa.</td></tr>
+<tr class=odd><td>Package:</td><td>lwip</td></tr>
+<tr class=odd><td>Package Version:</td><td>2.1.2</td></tr>
+<tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>7.5</td></tr>
+<tr class=odd><td>CVSS Severity:</td><td>HIGH</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:lwip_project:lwip:2.1.2:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>A buffer overflow vulnerability in the zepif_linkoutput() function of Free Software Foundation lwIP git head version and version 2.1.2 allows attackers to access sensitive information via a crafted 6LoWPAN packet.</td></tr>
+<tr class=odd><td></td><td></td></tr>
 
     </table>
     
