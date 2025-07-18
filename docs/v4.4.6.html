@@ -402,16 +402,40 @@
 <tr class=even><td>Description:</td><td>libexpat through 2.5.0 allows recursive XML Entity Expansion if XML_DTD is undefined at compile time.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-45157">CVE-2024-45157</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-27809">CVE-2025-27809</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.28.4</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=odd><td>CVSS Score:</td><td>5.1</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>5.4</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.28.4:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.28.9 and 3.x before 3.6.1, in which the user-selected algorithm is not used. Unlike previously documented, enabling MBEDTLS_PSA_HMAC_DRBG_MD_TYPE does not cause the PSA subsystem to use HMAC_DRBG: it uses HMAC_DRBG only when MBEDTLS_PSA_CRYPTO_EXTERNAL_RNG and MBEDTLS_CTR_DRBG_C are disabled.</td></tr>
+<tr class=odd><td>Description:</td><td>Mbed TLS before 2.28.10 and 3.x before 3.6.3, on the client side, accepts servers that have trusted certificates for arbitrary hostnames unless the TLS client application calls mbedtls_ssl_set_hostname.</td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=even><td></td><td></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-45157">CVE-2024-45157</a></td></tr>
+<tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
+<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=even><td>Package Version:</td><td>2.28.4</td></tr>
+<tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=even><td>CVSS Score:</td><td>5.1</td></tr>
+<tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.28.4:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.28.9 and 3.x before 3.6.1, in which the user-selected algorithm is not used. Unlike previously documented, enabling MBEDTLS_PSA_HMAC_DRBG_MD_TYPE does not cause the PSA subsystem to use HMAC_DRBG: it uses HMAC_DRBG only when MBEDTLS_PSA_CRYPTO_EXTERNAL_RNG and MBEDTLS_CTR_DRBG_C are disabled.</td></tr>
+<tr class=even><td></td><td></td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-52497">CVE-2025-52497</a></td></tr>
+<tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
+<tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=odd><td>Package Version:</td><td>2.28.4</td></tr>
+<tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>4.8</td></tr>
+<tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:L</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.28.4:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>Mbed TLS before 3.6.4 has a PEM parsing one-byte heap-based buffer underflow, in mbedtls_pem_read_buffer and two mbedtls_pk_parse functions, via untrusted PEM input.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-36647">CVE-2021-36647</a></td></tr>

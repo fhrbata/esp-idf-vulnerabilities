@@ -594,31 +594,31 @@
 <tr class=even><td>Description:</td><td>libexpat through 2.5.0 allows recursive XML Entity Expansion if XML_DTD is undefined at compile time.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-16910">CVE-2019-16910</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-27809">CVE-2025-27809</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=odd><td>CVSS Score:</td><td>5.3</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>5.4</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>Arm Mbed TLS before 2.19.0 and Arm Mbed Crypto before 2.0.0, when deterministic ECDSA is enabled, use an RNG with insufficient entropy for blinding, which might allow an attacker to recover a private key via side-channel attacks if a victim signs the same message many times. (For Mbed TLS, the fix is also available in versions 2.7.12 and 2.16.3.)</td></tr>
+<tr class=odd><td>Description:</td><td>Mbed TLS before 2.28.10 and 3.x before 3.6.3, on the client side, accepts servers that have trusted certificates for arbitrary hostnames unless the TLS client application calls mbedtls_ssl_set_hostname.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36421">CVE-2020-36421</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-16910">CVE-2019-16910</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=even><td>CVSS Score:</td><td>5.3</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. Because of a side channel in modular exponentiation, an RSA private key used in a secure enclave could be disclosed.</td></tr>
+<tr class=even><td>Description:</td><td>Arm Mbed TLS before 2.19.0 and Arm Mbed Crypto before 2.0.0, when deterministic ECDSA is enabled, use an RNG with insufficient entropy for blinding, which might allow an attacker to recover a private key via side-channel attacks if a victim signs the same message many times. (For Mbed TLS, the fix is also available in versions 2.7.12 and 2.16.3.)</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36422">CVE-2020-36422</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36421">CVE-2020-36421</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
@@ -627,43 +627,67 @@
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
 <tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. A side channel allows recovery of an ECC private key, related to mbedtls_ecp_check_pub_priv, mbedtls_pk_parse_key, mbedtls_pk_parse_keyfile, mbedtls_ecp_mul, and mbedtls_ecp_mul_restartable.</td></tr>
+<tr class=odd><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. Because of a side channel in modular exponentiation, an RSA private key used in a secure enclave could be disclosed.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36425">CVE-2020-36425</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36422">CVE-2020-36422</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=even><td>CVSS Score:</td><td>5.3</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.24.0. It incorrectly uses a revocationDate check when deciding whether to honor certificate revocation via a CRL. In some situations, an attacker can exploit this by changing the local clock.</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.23.0. A side channel allows recovery of an ECC private key, related to mbedtls_ecp_check_pub_priv, mbedtls_pk_parse_key, mbedtls_pk_parse_keyfile, mbedtls_ecp_mul, and mbedtls_ecp_mul_restartable.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
-<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-46392">CVE-2022-46392</a></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-36425">CVE-2020-36425</a></td></tr>
 <tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
 <tr class=odd><td>CVSS Score:</td><td>5.3</td></tr>
 <tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</td></tr>
 <tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=odd><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.28.2 and 3.x before 3.3.0. An adversary with access to precise enough information about memory accesses (typically, an untrusted operating system attacking a secure enclave) can recover an RSA private key after observing the victim performing a single private-key operation, if the window size (MBEDTLS_MPI_WINDOW_SIZE) used for the exponentiation is 3 or smaller.</td></tr>
+<tr class=odd><td>Description:</td><td>An issue was discovered in Arm Mbed TLS before 2.24.0. It incorrectly uses a revocationDate check when deciding whether to honor certificate revocation via a CRL. In some situations, an attacker can exploit this by changing the local clock.</td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=even><td></td><td></td></tr>
-<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-24119">CVE-2021-24119</a></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-46392">CVE-2022-46392</a></td></tr>
 <tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
 <tr class=even><td>Package:</td><td>mbed_tls</td></tr>
 <tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
 <tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
-<tr class=even><td>CVSS Score:</td><td>4.9</td></tr>
+<tr class=even><td>CVSS Score:</td><td>5.3</td></tr>
 <tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
-<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N</td></tr>
 <tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
-<tr class=even><td>Description:</td><td>In Trusted Firmware Mbed TLS 2.24.0, a side-channel vulnerability in base64 PEM file decoding allows system-level (administrator) attackers to obtain information about secret RSA keys via a controlled-channel and side-channel attack on software running in isolated environments that can be single stepped, especially Intel SGX.</td></tr>
+<tr class=even><td>Description:</td><td>An issue was discovered in Mbed TLS before 2.28.2 and 3.x before 3.3.0. An adversary with access to precise enough information about memory accesses (typically, an untrusted operating system attacking a secure enclave) can recover an RSA private key after observing the victim performing a single private-key operation, if the window size (MBEDTLS_MPI_WINDOW_SIZE) used for the exponentiation is 3 or smaller.</td></tr>
+<tr class=even><td></td><td></td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-24119">CVE-2021-24119</a></td></tr>
+<tr class=odd><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
+<tr class=odd><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=odd><td>Package Version:</td><td>2.13.1</td></tr>
+<tr class=odd><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=odd><td>CVSS Score:</td><td>4.9</td></tr>
+<tr class=odd><td>CVSS Severity:</td><td>MEDIUM</td></tr>
+<tr class=odd><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N</td></tr>
+<tr class=odd><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
+<tr class=odd><td>Description:</td><td>In Trusted Firmware Mbed TLS 2.24.0, a side-channel vulnerability in base64 PEM file decoding allows system-level (administrator) attackers to obtain information about secret RSA keys via a controlled-channel and side-channel attack on software running in isolated environments that can be single stepped, especially Intel SGX.</td></tr>
+<tr class=odd><td></td><td></td></tr>
+<tr class=even><td></td><td></td></tr>
+<tr class=even><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-52497">CVE-2025-52497</a></td></tr>
+<tr class=even><td>Vulnerable:</td><td><div class="red">yes</div></td></tr>
+<tr class=even><td>Package:</td><td>mbed_tls</td></tr>
+<tr class=even><td>Package Version:</td><td>2.13.1</td></tr>
+<tr class=even><td>CVSS Version:</td><td>3.1</td></tr>
+<tr class=even><td>CVSS Score:</td><td>4.8</td></tr>
+<tr class=even><td>CVSS Severity:</td><td>MEDIUM</td></tr>
+<tr class=even><td>CVSS Vector String:</td><td>CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:L</td></tr>
+<tr class=even><td>CPE:</td><td>cpe:2.3:a:arm:mbed_tls:2.13.1:*:*:*:*:*:*:*</td></tr>
+<tr class=even><td>Description:</td><td>Mbed TLS before 3.6.4 has a PEM parsing one-byte heap-based buffer underflow, in mbedtls_pem_read_buffer and two mbedtls_pk_parse functions, via untrusted PEM input.</td></tr>
 <tr class=even><td></td><td></td></tr>
 <tr class=odd><td></td><td></td></tr>
 <tr class=odd><td>ID:</td><td><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-18222">CVE-2019-18222</a></td></tr>
