@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>ESP-IDF Vulnerabilities</title>
 		<link rel="stylesheet" href="css/style.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+    <style>
+        /* Apply no-wrap to all columns except the last one */
+        #report td:not(:last-child) {
+            white-space: nowrap;
+        }
+    </style>
+
 	</head>
 	<body>
 		<header>
@@ -14,7 +26,50 @@
 			</div>
 		</header>
 		<main>
-			${content}
+            <p>
+                This page details known vulnerabilities affecting released
+                ESP-IDF versions, current as of ${datetime} UTC. Additional
+                insights into known vulnerabilities can be found in the
+                <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/security/vulnerabilities.html">Vulnerabilities</a>
+                page of the ESP-IDF Programming Guide.
+            </p>
+
+            <table id="report" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>release</th>
+                        <th>cve</th>
+                        <th>vulnerable</th>
+                        <th>severity</th>
+                        <th>package</th>
+                        <th>version</th>
+                        <th>description</th>
+                    </tr>
+                </thead>
+            </table>
 		</main>
 	</body>
+
+    <script>
+        $(document).ready(function() {
+            var rows = ${rows};
+
+            $('#report').DataTable({
+                data: rows,
+                columns: [
+                    { title: "release", data: "release" },
+                    { title: "cve", data: "cve" },
+                    { title: "vulnerable", data: "vulnerable" },
+                    { title: "severity", data: "severity" },
+                    { title: "package", data: "package" },
+                    { title: "version", data: "version" },
+                    { title: "description", data: "description" }
+                ],
+                search: {
+                    regex: true, // Enable regular expression search
+                },
+                pageLength: 50 // Set the default number of entries to be shown
+            });
+        });
+    </script>
 </html>

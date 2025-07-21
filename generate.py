@@ -7,6 +7,7 @@ from pathlib import Path
 from string import Template
 from subprocess import run
 from tempfile import TemporaryDirectory
+import urllib.request
 
 from packaging.version import Version
 
@@ -15,222 +16,159 @@ def sync_db():
     run(['esp-idf-sbom', 'sync-db'])
 
 
-def get_releases() -> dict:
-    releases = {}
-    releases_path = Path(__file__).resolve().parent / 'releases'
-    manifest_files = releases_path.glob('*.yml')
-    for manifest_file in manifest_files:
-        releases[manifest_file.stem] = {'manifest': str(manifest_file)}
+def check(path: Path) -> dict:
+    tmp_dir = TemporaryDirectory()
+    tmp_dir_path = Path(tmp_dir.name)
+    json_file_path = tmp_dir_path / 'output.json'
 
-    return dict(sorted(releases.items(), key=lambda item: Version(item[0]),
-                       reverse=True))
+    run(['esp-idf-sbom',
+         'manifest',
+         'check',
+         '--local-db',
+         '--extended-scan',
+         '--no-sync-db',
+         '--format',
+         'json',
+         '--output-file',
+         str(json_file_path),
+         str(path)])
+
+    with json_file_path.open("r", encoding="utf-8") as f:
+        report = json.load(f)
+
+    return report
 
 
-def check_releases(releases: dict) -> dict:
+def check_repository(repo: str, ref: str) -> dict:
     tmp_dir = TemporaryDirectory()
     tmp_dir_path = Path(tmp_dir.name)
 
-    for release, data in releases.items():
-        print(f'scanning {release}', file=sys.stderr)
-        manifest = data['manifest']
-        json_file_path = (tmp_dir_path / release).with_suffix('.json')
-        run(['esp-idf-sbom',
-             'manifest',
-             'check',
-             '--local-db',
-             '--no-sync-db',
-             '--format',
-             'json',
-             '--output-file',
-             str(json_file_path),
-             manifest])
+    run(['git', 
+         'clone',
+         '--no-tags',
+         '--depth=1',
+         '--recurse-submodules',
+         '--shallow-submodules',
+         '--branch', ref,
+         repo,
+         str(tmp_dir_path)])
 
-        with json_file_path.open("r", encoding="utf-8") as f:
-            data['report'] = json.load(f)
+    report = check(tmp_dir_path)
 
-    return releases
+    return report
 
 
-def generate_summary_page(releases: dict):
-    utc_now = datetime.now(timezone.utc)
-    formatted_time = utc_now.strftime('%Y-%m-%d %H:%M:%S')
+def check_manifest(url: str) -> dict:
+    tmp_dir = TemporaryDirectory()
+    tmp_dir_path = Path(tmp_dir.name)
+    manifest_path = tmp_dir_path / 'manifest.yml'
 
-    content = f'''<p>
-    This page details known vulnerabilities affecting released ESP-IDF versions, current as of {formatted_time} UTC.
-    Additional insights into known vulnerabilities can be found in the
-    <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/security/vulnerabilities.html">Vulnerabilities</a>
-    page of the ESP-IDF Programming Guide.
-    </p>'''
+    urllib.request.urlretrieve(url, manifest_path)
 
-    content += '''
-    <table class="summary-table">
-            <tr>
-                <th>Release</th>
-                <th>Vulnerable</th>
-                <th>CVE</th>
-                <th>Severity</th>
-                <th>Package</th>
-                <th>Version</th>
-            </tr>
-            '''
+    report = check(manifest_path)
 
-    odd = False
-    for release, data in releases.items():
-        release_href = f'<a href="{release}.html">{release}</a>'
-        odd = not odd
-        row_bg = 'odd' if odd else 'even'
-        records = data['report']['records']
-        vulnerable_records = []
-        for record in records:
-            if record['vulnerable'] == 'YES':
-                vulnerable_records.append(record)
+    return report
 
-        vulnerabilities_nr = len(vulnerable_records)
 
-        if vulnerabilities_nr == 0:
-            vulnerable = '<div class="green">no</div>'
-            content += f'''
-            <tr class={row_bg}>
-                <td class="center">{release_href}</td>
-                <td class="center">{vulnerable}</td>
-                <td class="center"></td>
-                <td class="center"></td>
-                <td class="center"></td>
-                <td class="center"></td>
-            </tr>
-            '''
+sync_db()
+
+ESP_IDF_REPO = 'https://github.com/espressif/esp-idf.git'
+IDF_EXTRA_COMPONENTS_REPO = 'https://github.com/espressif/idf-extra-components.git'
+RELEASED_MANIFEST_URL = 'https://raw.githubusercontent.com/fhrbata/esp-idf-vulnerabilities/refs/heads/main/releases'
+
+reports = {
+    'v6.0': check_repository(ESP_IDF_REPO, 'master'),
+    'v5.5-release': check_repository(ESP_IDF_REPO, 'release/v5.5'),
+    'v5.4-release': check_repository(ESP_IDF_REPO, 'release/v5.4'),
+    'v5.3-release': check_repository(ESP_IDF_REPO, 'release/v5.3'),
+    'v5.2-release': check_repository(ESP_IDF_REPO, 'release/v5.2'),
+    'v5.1-release': check_repository(ESP_IDF_REPO, 'release/v5.1'),
+
+    'extra-components': check_repository(IDF_EXTRA_COMPONENTS_REPO, 'master'),
+
+    'v5.4.1': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.4.1.yml'),
+    'v5.4.0': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.4.yml'),
+    'v5.3.3': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.3.3.yml'),
+    'v5.3.2': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.3.2.yml'),
+    'v5.3.1': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.3.1.yml'),
+    'v5.3.0': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.3.yml'),
+    'v5.2.5': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.2.5.yml'),
+    'v5.2.4': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.2.4.yml'),
+    'v5.2.3': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.2.3.yml'),
+    'v5.2.2': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.2.2.yml'),
+    'v5.2.1': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.2.1.yml'),
+    'v5.2.0': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.2.yml'),
+    'v5.1.6': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.1.6.yml'),
+    'v5.1.5': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.1.5.yml'),
+    'v5.1.4': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.1.4.yml'),
+    'v5.1.3': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.1.3.yml'),
+    'v5.1.2': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.1.2.yml'),
+    'v5.1.1': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.1.1.yml'),
+    'v5.1.0': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.1.yml'),
+    'v5.0.8': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.0.8.yml'),
+    'v5.0.7': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.0.7.yml'),
+    'v5.0.6': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.0.6.yml'),
+    'v5.0.5': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.0.5.yml'),
+    'v5.0.4': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.0.4.yml'),
+    'v5.0.3': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.0.3.yml'),
+    'v5.0.2': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.0.2.yml'),
+    'v5.0.1': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.0.1.yml'),
+    'v5.0.0': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.0.yml'),
+    'v4.4.8': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.4.8.yml'),
+    'v4.4.7': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.4.7.yml'),
+    'v4.4.6': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.4.6.yml'),
+    'v4.4.5': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.4.5.yml'),
+    'v4.4.4': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.4.4.yml'),
+    'v4.4.3': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.4.3.yml'),
+    'v4.4.2': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.4.2.yml'),
+    'v4.4.1': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.4.1.yml'),
+    'v4.4.0': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.4.yml'),
+    'v4.3.7': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.3.7.yml'),
+    'v4.3.6': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.3.6.yml'),
+    'v4.3.5': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.3.5.yml'),
+    'v4.3.4': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.3.4.yml'),
+    'v4.3.3': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.3.3.yml'),
+    'v4.3.2': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.3.2.yml'),
+    'v4.3.1': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.3.1.yml'),
+    'v4.3.0': check_manifest(f'{RELEASED_MANIFEST_URL}/v4.3.yml'),
+}
+
+rows = []
+for release, report in reports.items():
+    for record in report['records']:
+        if record['vulnerable'] not in ('YES', 'NO', 'EXCLUDED', 'MAYBE'):
             continue
-
-        if vulnerabilities_nr == 1:
-            vulnerable = '<div class="red">yes</div>'
-            record = vulnerable_records[0]
-            cve_id = record['cve_id']
-            cve_link = record['cve_link']
-            cve_href = f'<a href="{cve_link}">{cve_id}</a>'
-            cve_severity = record['cvss_base_severity'].lower()
-            package = record['pkg_name']
-            package_ver = record['pkg_version']
-            content += f'''
-            <tr class={row_bg}>
-                <td class="center">{release_href}</td>
-                <td class="center">{vulnerable}</td>
-                <td class="center">{cve_href}</td>
-                <td class="center">{cve_severity}</td>
-                <td class="center">{package}</td>
-                <td class="center">{package_ver}</td>
-            </tr>
-            '''
-            continue
-
-        vulnerable = '<div class="red">yes</div>'
-
-        content += f'''
-            <tr class={row_bg}>
-                <td rowspan="{vulnerabilities_nr + 1}" class="center">{release_href}</td>
-                <td rowspan="{vulnerabilities_nr + 1}" class="center">{vulnerable}</td>
-                <td class="center"></td>
-                <td class="center"></td>
-                <td class="center"></td>
-                <td class="center"></td>
-            </tr>
-            '''
-
-        for record in vulnerable_records:
-            cve_id = record['cve_id']
-            cve_link = record['cve_link']
-            cve_href = f'<a href="{cve_link}">{cve_id}</a>'
-            cve_severity = record['cvss_base_severity'].lower()
-            package = record['pkg_name']
-            package_ver = record['pkg_version']
-            content += f'''
-            <tr class={row_bg}>
-                <td class="center">{cve_href}</td>
-                <td class="center">{cve_severity}</td>
-                <td class="center">{package}</td>
-                <td class="center">{package_ver}</td>
-            </tr>
-            '''
-
-    content += '''
-    </table>
-    '''
-
-    page_templ_path = Path(__file__).resolve().parent / 'docs' / 'page.html.templ'
-    with page_templ_path.open("r", encoding="utf-8") as f:
-        index_data = f.read()
-
-    formatted = Template(index_data).safe_substitute({'content': content})
-
-    index_path = Path(__file__).resolve().parent / 'docs' / 'index.html'
-    with index_path.open("w", encoding="utf-8") as f:
-        f.write(formatted)
-
-
-def generate_release_page(release: str, data: dict):
-    content = f'''
-    <h3>{release}</h3>
-    <table class="release-table">
-    '''
-
-    def add_tag_value_row(tag: str, value: str, bg: str):
-        nonlocal content
-        content += f'<tr class={bg}><td>{tag}:</td><td>{value}</td></tr>\n'
-
-    records = data['report']['records']
-    vulnerable_records = []
-    for record in records:
-        if record['vulnerable'] in ('YES', 'EXCLUDED'):
-            vulnerable_records.append(record)
-
-    odd = False
-    for record in vulnerable_records:
-        odd = not odd
-        row_bg = 'odd' if odd else 'even'
-
-        content += f'<tr class={row_bg}><td></td><td></td></tr>\n'
 
         cve_id = record['cve_id']
         cve_link = record['cve_link']
         cve_href = f'<a href="{cve_link}">{cve_id}</a>'
-        add_tag_value_row('ID', cve_href, row_bg)
 
-        if record['vulnerable']  == 'YES':
-            add_tag_value_row('Vulnerable', '<div class="red">yes</div>', row_bg)
-        else:
-            add_tag_value_row('Vulnerable', '<div class="green">no</div>', row_bg)
-            add_tag_value_row('Not Applicable', record['exclude_reason'], row_bg)
+        description = '<p>' + record['cve_desc'] + '</p>'
+        if record['vulnerable'] == 'EXCLUDED':
+            description += '<p>Not Applicable: ' + record['exclude_reason'] + '</p>'
 
-        add_tag_value_row('Package', record['pkg_name'], row_bg)
-        add_tag_value_row('Package Version', record['pkg_version'], row_bg)
+        row = {
+            'release': release,
+            'cve': cve_href,
+            'vulnerable': record['vulnerable'],
+            'severity': record['cvss_base_severity'],
+            'package': record['pkg_name'],
+            'version': record['pkg_version'],
+            'description': description
+        }
 
-        add_tag_value_row('CVSS Version', record['cvss_version'], row_bg)
-        add_tag_value_row('CVSS Score', record['cvss_base_score'], row_bg)
-        add_tag_value_row('CVSS Severity', record['cvss_base_severity'], row_bg)
-        add_tag_value_row('CVSS Vector String', record['cvss_vector_string'], row_bg)
+        rows.append(row)
 
-        add_tag_value_row('CPE', record['cpe'], row_bg)
-        add_tag_value_row('Description', record['cve_desc'], row_bg)
+page_templ_path = Path(__file__).resolve().parent / 'docs' / 'page.html.templ'
+with page_templ_path.open("r", encoding="utf-8") as f:
+    index_data = f.read()
 
-        content += f'<tr class={row_bg}><td></td><td></td></tr>\n'
+formatted = Template(index_data).safe_substitute(
+        {
+            'rows': rows,
+            'datetime': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+        })
 
-    content += '''
-    </table>
-    '''
-
-    page_templ_path = Path(__file__).resolve().parent / 'docs' / 'page.html.templ'
-    with page_templ_path.open("r", encoding="utf-8") as f:
-        index_data = f.read()
-
-    formatted = Template(index_data).safe_substitute({'content': content})
-
-    index_path = Path(__file__).resolve().parent / 'docs' / f'{release}.html'
-    with index_path.open("w", encoding="utf-8") as f:
-        f.write(formatted)
-
-
-sync_db()
-releases = get_releases()
-releases = check_releases(releases)
-generate_summary_page(releases)
-for release, data in releases.items():
-    generate_release_page(release, data)
+index_path = Path(__file__).resolve().parent / 'docs' / 'index.html'
+with index_path.open("w", encoding="utf-8") as f:
+    f.write(formatted)

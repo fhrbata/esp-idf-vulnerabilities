@@ -1,115 +1,56 @@
 body {
-	background-color: #000000;
-	color: #ffffff;
-	font-family: sans-serif;
-	margin: 0;
-	padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
     min-width: 800px;
 }
 
 a {
-	color: #8ab4f8;
-	text-decoration: none;
+    color: #8ab4f8;
+    text-decoration: none;
 }
 
 .site-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem;
-	background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000000;
 }
 
 .site-title {
-	text-align: left;
-	margin: 0;
-	font-size: 2rem;
+    text-align: left;
+    margin: 0;
+    font-size: 2rem;
 }
 
 .site-title a {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .site-logo {
-	height: 3rem;
-	width: auto;
-	text-align: right;
+    height: 3rem;
+    width: auto;
+    text-align: right;
 }
 
 main {
-	padding: 2rem;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 2rem;
 }
 
 .red {
-	color: #FF0000;
+    color: #FF0000;
 }
 
 .green {
-	color: #008000;
+    color: #008000;
 }
 
-.summary-table {
-    border-collapse: collapse;
-    margin: 25px auto;
-    font-size: 1rem;
-    font-family: sans-serif;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.summary-table th {
-	font-size: 1.3rem;
-    text-align: center;
-    padding: 12px 15px;
-}
-
-.summary-table td {
-    padding: 12px 15px;
-}
-
-.summary-table td.center {
-    padding: 12px 15px;
-    text-align: center;
-}
-
-.summary-table tbody tr.odd {
-	background-color: #111111;
-}
-
-.summary-table tbody tr.even {
-	background-color: #000000;
-}
-
-.summary-table td:nth-child(3) {
-  white-space: nowrap;
-}
-
-.release-table {
-    border-collapse: collapse;
-    margin: 25px auto;
-    font-size: 1rem;
-    font-family: sans-serif;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.release-table th {
-	font-size: 1.3rem;
-    text-align: center;
-    padding: 5px 15px;
-}
-
-.release-table td {
-    padding: 5px 15px;
-}
-
-.release-table td.center {
-    padding: 5px 15px;
-    text-align: center;
-}
-
-.release-table tbody tr.odd {
-	background-color: #111111;
-}
-
-.release-table tbody tr.even {
-	background-color: #000000;
+/* Apply no-wrap to all columns except the last one */
+#report td:not(:last-child) {
+    white-space: nowrap;
 }
