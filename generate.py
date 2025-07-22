@@ -77,15 +77,16 @@ IDF_EXTRA_COMPONENTS_REPO = 'https://github.com/espressif/idf-extra-components.g
 RELEASED_MANIFEST_URL = 'https://raw.githubusercontent.com/fhrbata/esp-idf-vulnerabilities/refs/heads/main/releases'
 
 reports = {
-    'v6.0': check_repository(ESP_IDF_REPO, 'master'),
-    'v5.5-release': check_repository(ESP_IDF_REPO, 'release/v5.5'),
-    'v5.4-release': check_repository(ESP_IDF_REPO, 'release/v5.4'),
-    'v5.3-release': check_repository(ESP_IDF_REPO, 'release/v5.3'),
-    'v5.2-release': check_repository(ESP_IDF_REPO, 'release/v5.2'),
-    'v5.1-release': check_repository(ESP_IDF_REPO, 'release/v5.1'),
+    'v6.0-next': check_repository(ESP_IDF_REPO, 'master'),
+    'v5.5-next': check_repository(ESP_IDF_REPO, 'release/v5.5'),
+    'v5.4-next': check_repository(ESP_IDF_REPO, 'release/v5.4'),
+    'v5.3-next': check_repository(ESP_IDF_REPO, 'release/v5.3'),
+    'v5.2-next': check_repository(ESP_IDF_REPO, 'release/v5.2'),
+    'v5.1-next': check_repository(ESP_IDF_REPO, 'release/v5.1'),
 
     'extra-components': check_repository(IDF_EXTRA_COMPONENTS_REPO, 'master'),
 
+    'v5.5.0': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.5.yml'),
     'v5.4.1': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.4.1.yml'),
     'v5.4.0': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.4.yml'),
     'v5.3.3': check_manifest(f'{RELEASED_MANIFEST_URL}/v5.3.3.yml'),

@@ -34,6 +34,20 @@
                 page of the ESP-IDF Programming Guide.
             </p>
 
+            <p>
+            <strong>Vulnerable status:</strong>
+            <strong>YES</strong> - version is confirmed to be vulnerable,
+            <strong>MAYBE</strong> - version might be vulnerable and needs further review,
+            <strong>EXCLUDED</strong> - vulnerability does not apply to this version,
+            <strong>NO</strong> - there are no known vulnerabilities
+            </p>
+
+            <p>
+            <strong>Search:</strong> The input is split into words, and each word is matched
+            independently in any column, in any order. Matching is case-insensitive and
+            supports regular expressions.
+            </p>
+
             <table id="report" class="display" style="width:100%">
                 <thead>
                     <tr>
@@ -51,23 +65,83 @@
 	</body>
 
     <script>
+        jQuery.extend(jQuery.fn.dataTable.ext.type.order, {
+            "version-pre": function (version) {
+                const parts = version.split('.').map(p => parseInt(p) || 0);
+                while (parts.length < 3) parts.push(0); // pad to [major, minor, patch]
+                return parts[0] * 1e6 + parts[1] * 1e3 + parts[2];
+            }
+        });
+
+        jQuery.extend(jQuery.fn.dataTable.ext.type.order, {
+            "release-pre": function (v) {
+                // Remove the "v" prefix
+                v = v.trim().replace(/^v/i, '');
+
+                // Extract main version and suffix
+                const [main, suffix] = v.split('-');
+
+                const parts = main.split('.').map(p => parseInt(p, 10) || 0);
+                while (parts.length < 3) parts.push(0);
+
+                // Boost score for "-next" suffix
+                const bump = suffix === 'next' ? 1 : 0;
+
+                // Generate sortable number (higher is newer)
+                return parts[0] * 1e9 + parts[1] * 1e6 + parts[2] * 1e3 + bump;
+            }
+        });
+
+        const vulnerable_sort_map = {
+            "SKIPPED": 0,
+            "NO": 1,
+            "EXCLUDED": 2,
+            "MAYBE": 3,
+            "YES": 4
+        };
+
+        jQuery.extend(jQuery.fn.dataTable.ext.type.order, {
+            "vulnerable-pre": function (data) {
+                return vulnerable_sort_map[data.trim()] ?? -1;
+            }
+        });
+
+        const severity_sort_map = {
+            "LOW": 0,
+            "MEDIUM": 1,
+            "HIGH": 2,
+            "CRITICAL": 3
+        };
+
+        jQuery.extend(jQuery.fn.dataTable.ext.type.order, {
+            "severity-pre": function (data) {
+                return severity_sort_map[data.trim()] ?? -1;
+            }
+        });
+
         $(document).ready(function() {
             var rows = ${rows};
 
             $('#report').DataTable({
                 data: rows,
                 columns: [
-                    { title: "release", data: "release" },
+                    { title: "release", data: "release", type: "release" },
                     { title: "cve", data: "cve" },
-                    { title: "vulnerable", data: "vulnerable" },
-                    { title: "severity", data: "severity" },
+                    { title: "vulnerable", data: "vulnerable", type: "vulnerable" },
+                    { title: "severity", data: "severity", type: "severity" },
                     { title: "package", data: "package" },
-                    { title: "version", data: "version" },
+                    { title: "version", data: "version", type: "version" },
                     { title: "description", data: "description" }
+                ],
+                order: [
+                    [0, 'desc'],
+                    [2, 'desc'],
+                    [3, 'desc']
                 ],
                 search: {
                     regex: true, // Enable regular expression search
                 },
+                scrollX: true,
                 pageLength: 50 // Set the default number of entries to be shown
             });
         });
