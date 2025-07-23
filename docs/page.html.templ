@@ -50,9 +50,73 @@
 
             <p>
             <strong>Search:</strong> The input is split into words, and each word is matched
-            independently in any column, in any order. Matching is case-insensitive and
-            supports regular expressions.
+            independently in any column, in any order. Matching is case-insensitive.
+            For a more detailed search, use the <button onclick="toggleFilterTable()">advanced search</button>.
             </p>
+
+
+            <table id="filter-table" cellpadding="3" cellspacing="0" border="0" style="width: 67%; margin: 0 auto 2em auto;">
+                <thead>
+                    <tr>
+                        <th align="left">target</th>
+                        <th>cascading filters</th>
+                        <th>search text</th>
+                        <th>treat as regex</th>
+                        <th>case-sensitive search</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="filter_col1" data-column="0">
+                        <td>release</td>
+                        <td align="center"><select id="filter-release" style="width:100%"><option value="">all</option></select></td>
+                        <td align="center"><input type="text" class="column_filter" id="col0_filter"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col0_regex"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col0_case"></td>
+                    </tr>
+                    <tr id="filter_col2" data-column="1">
+                        <td>cve</td>
+                        <td align="center"><select id="filter-cve" style="width:100%"><option value="">all</option></select></td>
+                        <td align="center"><input type="text" class="column_filter" id="col1_filter"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col1_regex"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col1_case"></td>
+                    </tr>
+                    <tr id="filter_col3" data-column="2">
+                        <td>vulnerable</td>
+                        <td align="center"><select id="filter-vulnerable" style="width:100%"><option value="">all</option></select></td>
+                        <td align="center"><input type="text" class="column_filter" id="col2_filter"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col2_regex"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col2_case"></td>
+                    </tr>
+                    <tr id="filter_col4" data-column="3">
+                        <td>severity</td>
+                        <td align="center"><select id="filter-severity" style="width:100%"><option value="">all</option></select></td>
+                        <td align="center"><input type="text" class="column_filter" id="col3_filter"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col3_regex"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col3_case"></td>
+                    </tr>
+                    <tr id="filter_col5" data-column="4">
+                        <td>package</td>
+                        <td align="center"><select id="filter-package" style="width:100%"><option value="">all</option></select></td>
+                        <td align="center"><input type="text" class="column_filter" id="col4_filter"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col4_regex"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col4_case"></td>
+                    </tr>
+                    <tr id="filter_col6" data-column="5">
+                        <td>version</td>
+                        <td align="center"><select id="filter-version" style="width:100%"><option value="">all</option></select></td>
+                        <td align="center"><input type="text" class="column_filter" id="col5_filter"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col5_regex"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col5_case"></td>
+                    </tr>
+                    <tr id="filter_col7" data-column="6">
+                        <td>description</td>
+                        <td align="center"></td> <!-- No filter for Actions -->
+                        <td align="center"><input type="text" class="column_filter" id="col6_filter"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col6_regex"></td>
+                        <td align="center"><input type="checkbox" class="column_filter" id="col6_case"></td>
+                    </tr>
+                </tbody>
+            </table>
 
             <table id="report" class="display" style="width:100%">
                 <thead>
@@ -128,17 +192,8 @@
         $(document).ready(function() {
             var rows = ${rows};
 
-            $('#report').DataTable({
+            table = $('#report').DataTable({
                 data: rows,
-                columns: [
-                    { title: "release", data: "release", type: "release" },
-                    { title: "cve", data: "cve" },
-                    { title: "vulnerable", data: "vulnerable", type: "vulnerable" },
-                    { title: "severity", data: "severity", type: "severity" },
-                    { title: "package", data: "package" },
-                    { title: "version", data: "version", type: "version" },
-                    { title: "description", data: "description" }
-                ],
                 order: [
                     [0, 'desc'],
                     [2, 'desc'],
@@ -154,11 +209,96 @@
                     }
                 ],
                 search: {
-                    regex: true, // Enable regular expression search
+                    regex: false,
                 },
                 scrollX: true,
-                pageLength: 50 // Set the default number of entries to be shown
+                pageLength: 50, // Set the default number of entries to be shown
+
+                initComplete: function () {
+                    const api = this.api();
+
+                    const filters = [
+                        { id: '#filter-release', col: 0 },
+                        { id: '#filter-cve', col: 1 },
+                        { id: '#filter-vulnerable', col: 2 },
+                        { id: '#filter-severity', col: 3 },
+                        { id: '#filter-package', col: 4 },
+                        { id: '#filter-version', col: 5 }
+                    ];
+
+                    // Apply filters on change
+                    filters.forEach(filter => {
+                        $(filter.id).on('change', function () {
+                            filters.forEach(f => {
+                                const val = $(f.id).val();
+                                const regex = val ? '^' + $.fn.dataTable.util.escapeRegex(val) + '$' : '';
+                                api.column(f.col).search(regex, true, false);
+                            });
+                            api.draw();
+                        });
+                    });
+
+                    function updateFilterOptions() {
+                        const visibleRows = api.rows({ search: 'applied' }).data();
+
+                        filters.forEach(filter => {
+                            const select = $(filter.id);
+                            const currentVal = select.val();
+                            const seen = new Set();
+
+                            visibleRows.each(function (row) {
+                                const cellHtml = row[filter.col];
+                                const text = $('<div>').html(cellHtml).text().trim();
+                                if (text) seen.add(text);
+                            });
+
+                            select.empty().append('<option value="">All</option>');
+                            [...seen].sort().forEach(value => {
+                                select.append($('<option>', { value: value, text: value }));
+                            });
+
+                            if (seen.has(currentVal)) {
+                                select.val(currentVal);
+                            }
+                        });
+                    }
+
+                    // Populate filters on load and every redraw
+                    updateFilterOptions();
+                    api.on('draw', updateFilterOptions);
+                }
+
             });
         });
+
+        function filterColumn(table, i) {
+            let filter = document.querySelector('#col' + i + '_filter');
+            let regex = document.querySelector('#col' + i + '_regex');
+            let case_sen = document.querySelector('#col' + i + '_case');
+
+            table.column(i).search(filter.value, regex.checked, !regex.checked, !case_sen.checked).draw();
+        }
+
+        document.querySelectorAll('input.column_filter').forEach((el) => {
+            let tr = el.closest('tr');
+            let columnIndex = tr.getAttribute('data-column');
+
+            el.addEventListener(el.type === 'text' ? 'keyup' : 'change', () =>
+                filterColumn(table, columnIndex)
+            );
+        });
+
+        function toggleFilterTable() {
+            const table = document.getElementById('filter-table');
+            const button = event.target;
+
+            table.classList.toggle('visible');
+
+            if (table.classList.contains('visible')) {
+                button.textContent = 'hide advanced search';
+            } else {
+                button.textContent = 'advanced search';
+            }
+        }
     </script>
 </html>

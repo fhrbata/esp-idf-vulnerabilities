@@ -54,3 +54,10 @@ main {
 #report td:not(:last-child) {
     white-space: nowrap;
 }
+
+#filter-table {
+  display: none;
+}
+
+#filter-table.visible {
+  display: table;

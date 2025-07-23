@@ -40,6 +40,8 @@ def check(path: Path) -> dict:
 
 
 def check_repository(repo: str, ref: str) -> dict:
+    print(f'checking repository "{repo}", ref: "{ref}"')
+
     tmp_dir = TemporaryDirectory()
     tmp_dir_path = Path(tmp_dir.name)
 
@@ -59,6 +61,8 @@ def check_repository(repo: str, ref: str) -> dict:
 
 
 def check_manifest(url: str) -> dict:
+    print(f'checking manifest "{url}"')
+
     tmp_dir = TemporaryDirectory()
     tmp_dir_path = Path(tmp_dir.name)
     manifest_path = tmp_dir_path / 'manifest.yml'
@@ -148,15 +152,15 @@ for release, report in reports.items():
         if record['vulnerable'] == 'EXCLUDED':
             description += '<p>Not Applicable: ' + record['exclude_reason'] + '</p>'
 
-        row = {
-            'release': release,
-            'cve': cve_href,
-            'vulnerable': record['vulnerable'],
-            'severity': record['cvss_base_severity'],
-            'package': record['pkg_name'],
-            'version': record['pkg_version'],
-            'description': description
-        }
+        row = [
+            release,
+            cve_href,
+            record['vulnerable'],
+            record['cvss_base_severity'],
+            record['pkg_name'],
+            record['pkg_version'],
+            description
+        ]
 
         rows.append(row)
 
