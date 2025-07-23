@@ -74,7 +74,7 @@ sync_db()
 
 ESP_IDF_REPO = 'https://github.com/espressif/esp-idf.git'
 IDF_EXTRA_COMPONENTS_REPO = 'https://github.com/espressif/idf-extra-components.git'
-RELEASED_MANIFEST_URL = 'https://raw.githubusercontent.com/fhrbata/esp-idf-vulnerabilities/refs/heads/main/releases'
+RELEASED_MANIFEST_URL = 'https://raw.githubusercontent.com/espressif/esp-idf-sbom/refs/heads/master/aggregated_manifests'
 
 reports = {
     'v6.0-next': check_repository(ESP_IDF_REPO, 'master'),
