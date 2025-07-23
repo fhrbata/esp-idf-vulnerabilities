@@ -194,6 +194,15 @@
 
             table = $('#report').DataTable({
                 data: rows,
+                columns: [
+                    { title: "release", type: "release"},
+                    { title: "cve"},
+                    { title: "vulnerable", type: "vulnerable" },
+                    { title: "severity", type: "severity" },
+                    { title: "package"},
+                    { title: "version", type: "version" },
+                    { title: "description"}
+                ],
                 order: [
                     [0, 'desc'],
                     [2, 'desc'],
